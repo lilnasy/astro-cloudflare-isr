@@ -1,0 +1,7 @@
+{
+    "type": "module",
+    "dependencies": {
+        "@astrojs/cloudflare": "^6.3.0",
+        "astro": "^2.5.6"
+    }
+}
