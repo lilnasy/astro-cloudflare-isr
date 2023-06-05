@@ -15,4 +15,4 @@ async function cachingMiddleware({ request }: { request: Request }, next : () =>
 export const onRequest =
     typeof globalThis.CacheStorage === 'function' && globalThis.caches instanceof globalThis.CacheStorage
         ? cachingMiddleware
-        : (_, next) => { next() }
+        : (_, next) => next()
