@@ -3,8 +3,5 @@ import cloudflare from '@astrojs/cloudflare'
 
 export default defineConfig({
     output: 'server',
-    adapter: cloudflare(),
-    experimental: {
-        middleware: true
-    }
+    adapter: cloudflare()
 })

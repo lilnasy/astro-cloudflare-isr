@@ -1,16 +1,17 @@
 ---
-import favicon from './favicon.svg'
-Astro.response.headers.set('Cache-Control', 'max-age=60')
+Astro.response.headers.set('Cache-Control', 's-maxage=60')
 ---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href={favicon} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>{new Date(Date.now()).toUTCString()}</h1>
+	    <h2>This page will update at most once per minute.</h2>
+	    <h3>Anyone who visits it again during the next few seconds will see a copy of this page.</h3>
+	    <h4>Without the "Cache-Control" header, they would have seen a freshly created page with the current time instead.</h4>
+		<p>Last updated: {new Date(Date.now()).toUTCString()}</p>
 	</body>
 </html>
